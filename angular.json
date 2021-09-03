@@ -1,9 +1,12 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "fd3df61b-d1dd-429e-aabc-6522a3439e61"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "practica1": {
+    "one_fence": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/practica1",
+            "outputPath": "dist/one_fence",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -31,9 +34,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,10 +80,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "practica1:build:production"
+              "browserTarget": "one_fence:build:production"
             },
             "development": {
-              "browserTarget": "practica1:build:development"
+              "browserTarget": "one_fence:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +91,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "practica1:build"
+            "browserTarget": "one_fence:build"
           }
         },
         "test": {
@@ -107,5 +115,5 @@
       }
     }
   },
-  "defaultProject": "practica1"
+  "defaultProject": "one_fence"
 }
